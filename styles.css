@@ -51,7 +51,7 @@
         }
 
         .logo {
-            font-family: 'UnifrakturMaguntia', cursive;
+            font-family: 'Bebas Neue' sans-serif;
             color: var(--primary);
             font-size: 1.8rem;
             font-weight: bold;
@@ -126,7 +126,7 @@
         }
 
         .company-name {
-            font-family: 'UnifrakturMaguntia', cursive;
+            font-family: 'Bebas Neue', sans-serif;
             font-size: 6rem;
             font-weight: bold;
             color: var(--black);
@@ -298,6 +298,10 @@
             align-items: center;
         }
 
+        .section-title {
+            color: black;
+        }
+
         .about-text {
             position: relative;
         }
@@ -355,7 +359,7 @@
         #contact {
             padding: 100px 5%;
             background: linear-gradient(rgba(10, 10, 10, 0.9), rgba(10, 10, 10, 0.9)), 
-                        url('https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80') no-repeat center center/cover;
+                        url('https://images.pexels.com/photos/5332007/pexels-photo-5332007.jpeg?auto=compress&cs=tinysrgb&w=800') no-repeat center center/cover;
             background-attachment: fixed;
             color: var(--cream);
         }
@@ -492,7 +496,7 @@
         }
 
         .footer-logo {
-            font-family: 'UnifrakturMaguntia', cursive;
+            font-family: 'Bebas Neue', sans-serif;
             font-size: 2rem;
             font-weight: bold;
             color: var(--cream);
