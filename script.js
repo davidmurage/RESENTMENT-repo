@@ -64,27 +64,36 @@
                 });
             });
 
-            // Form submission
-            const contactForm = document.getElementById('contactForm');
-            contactForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                // Here you would typically send the form data to a server
-                // For demo purposes, we'll just show a success message
-                alert('Your message has been sent. We shall respond in due time.');
-                contactForm.reset();
-                
-                // You could replace this with actual form submission code:
-                // fetch('your-server-endpoint', {
-                //     method: 'POST',
-                //     body: new FormData(contactForm)
-                // }).then(response => {
-                //     alert('Message sent successfully!');
-                //     contactForm.reset();
-                // }).catch(error => {
-                //     alert('Error sending message. Please try again.');
-                // });
-            });
+            // Form submission - Updated to send to Node.js backend
+const contactForm = document.getElementById('contactForm');
+contactForm.addEventListener('submit', async function(e) {
+    e.preventDefault();
+
+    const formData = {
+        name: contactForm.name.value,
+        email: contactForm.email.value,
+        message: contactForm.message.value
+    };
+
+    try {
+        const response = await fetch('http://localhost:5000/contact', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(formData)
+        });
+
+        const data = await response.json();
+        if (response.ok) {
+            alert(data.message || 'Message sent successfully!');
+            contactForm.reset();
+        } else {
+            alert(data.message || 'Failed to send message. Please try again.');
+        }
+    } catch (error) {
+        console.error('Error sending message:', error);
+        alert('Something went wrong. Please try again later.');
+    }
+});
 
             // Newsletter form
             const newsletterForm = document.querySelector('.newsletter-form');
